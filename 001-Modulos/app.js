@@ -1,5 +1,10 @@
-const modulo1 = require(`./modulo1`);
+const { Pessoa}  = require(`./modulo1`)
+const axios = require(`axios`)
+const p1 = new Pessoa(`Nalda`, `Maria`)
 
-// console.log(modulo1);
+console.log(p1);
 
-modulo1.falaNome(`Fagner`, `ferreira`)
+const objsPessoas = axios(`https://jsonplaceholder.typicode.com/users`)
+.then((respose) =>{console.log(respose.data);})
+.catch((e)=>{console.log(e);
+})
